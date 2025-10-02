@@ -1,5 +1,13 @@
 # Решение команды ЛАБИИ РСЯ
-
+##Ссылки
+### Ссылка на веса обученной модели:
+https://disk.360.yandex.ru/d/K5ahFaSseXDmSQ
+### Ссылка на докеробраз:
+https://disk.360.yandex.ru/d/fTo-78JAIEGaCw
+#### для извлечения образа:
+```bash
+docker load -i ner_api_dockerimage.tar
+```
 ## Структура проекта
 
 ```
