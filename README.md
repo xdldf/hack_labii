@@ -118,3 +118,4 @@ python predict_server.py
 - CUDA (опционально, для ускорения на GPU)
 - Docker (для контейнеризации)
 
+
