@@ -1,6 +1,4 @@
-# NER Hackathon Project
-
-Проект для обучения и развертывания модели Named Entity Recognition (NER) на русском языке с использованием трансформеров.
+# Решение команды ЛАБИИ РСЯ
 
 ## Структура проекта
 
@@ -87,7 +85,7 @@ curl http://localhost:8000/health
 ### Предсказание NER
 
 ```bash
-curl -X POST "http://176.119.174.102:8000/api/predict" \
+curl -X POST "http://...:8000/api/predict" \
      -H "Content-Type: application/json" \
      -d '{"input": "алёнка шоколад 200 г"}'
 ```
