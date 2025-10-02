@@ -104,7 +104,6 @@ docker run -p 8000:8000 -e MODEL_DIR=/app/models/deeppavlov -v $(pwd)/models:/ap
 
 **Docker Compose:**
 - `ports: "8000:8000"` - проброс порта
-- `volumes: ./models/deeppavlov:/app/models/deeppavlov` - монтирование папки с моделями
 - `environment: MODEL_DIR=/app/models/deeppavlov` - путь к модели в контейнере
 - `container_name: ner_api` - имя контейнера
 - `image: ner_api:latest` - используемый образ
