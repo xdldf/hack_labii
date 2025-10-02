@@ -4,7 +4,6 @@
 
 ## Структура проекта
 
-```markdown:/home/user/job/hack_labii/README.md
 ```
 ├── train.py              # Скрипт для обучения модели
 ├── predict_server.py     # FastAPI сервер для предсказаний
@@ -88,7 +87,9 @@ curl http://localhost:8000/health
 ### Предсказание NER
 
 ```bash
-curl -X POST 176.119.174.102:8000/api/predict   -H "Content-Type: application/json"   -d '{"input": "алёнка шоколад 200 г"}'
+curl -X POST "http://176.119.174.102:8000/api/predict" \
+     -H "Content-Type: application/json" \
+     -d '{"input": "алёнка шоколад 200 г"}'
 ```
 
 Ответ:
