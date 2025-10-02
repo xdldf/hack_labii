@@ -66,7 +66,7 @@ python train.py --train_path ./datasets/train_clean.csv --model_name DeepPavlov/
 docker build -t ner_api:latest .
 
 # Для обычного Docker
-docker build -t ner-hackathon .
+docker build -t ner-api .
 
 # Альтернативное имя образа
 docker build -t ner-api .
@@ -91,10 +91,10 @@ docker-compose logs -f ner
 
 ```bash
 # Запуск с локальной моделью
-docker run -p 8000:8000 -v $(pwd)/models:/app/models ner-hackathon
+docker run -p 8000:8000 -v $(pwd)/models:/app/models ner-api
 
 # Запуск с переменной окружения для пути к модели
-docker run -p 8000:8000 -e MODEL_DIR=/app/models/deeppavlov -v $(pwd)/models:/app/models ner-hackathon
+docker run -p 8000:8000 -e MODEL_DIR=/app/models/deeppavlov -v $(pwd)/models:/app/models ner-api
 ```
 
 ### Параметры запуска:
