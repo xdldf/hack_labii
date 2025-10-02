@@ -235,7 +235,7 @@ def main():
         per_device_eval_batch_size=args.batch_size,
         num_train_epochs=args.epochs,
         weight_decay=args.weight_decay,
-        evaluation_strategy="epoch",
+        eval_strategy="epoch",
         save_strategy="epoch",
         save_total_limit=2,
         load_best_model_at_end=True,
