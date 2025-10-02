@@ -13,7 +13,8 @@
 ```
 ## Клонировать репозиторий
 
-```git clone https://github.com/xdldf/hack_labii
+```bash
+git clone https://github.com/xdldf/hack_labii
 ```
 
 ## Установка зависимостей
