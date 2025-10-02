@@ -50,10 +50,29 @@ python train.py --train_path ./datasets/train_clean.csv --model_name DeepPavlov/
 ### Сборка образа
 
 ```bash
+# Для Docker Compose
+docker build -t ner_api:latest .
+
+# Для обычного Docker
 docker build -t ner-hackathon .
 ```
 
 ### Запуск контейнера
+
+#### Вариант 1: Docker Compose (рекомендуется)
+
+```bash
+# Запуск сервиса
+docker-compose up -d
+
+# Остановка сервиса
+docker-compose down
+
+# Просмотр логов
+docker-compose logs -f ner
+```
+
+#### Вариант 2: Docker команды
 
 ```bash
 # Запуск с локальной моделью
@@ -65,6 +84,14 @@ docker run -p 8000:8000 -e MODEL_DIR=/app/models/deeppavlov -v $(pwd)/models:/ap
 
 ### Параметры запуска:
 
+**Docker Compose:**
+- `ports: "8000:8000"` - проброс порта
+- `volumes: ./models/deeppavlov:/app/models/deeppavlov` - монтирование папки с моделями
+- `environment: MODEL_DIR=/app/models/deeppavlov` - путь к модели в контейнере
+- `container_name: ner_api` - имя контейнера
+- `image: ner_api:latest` - используемый образ
+
+**Docker команды:**
 - `-p 8000:8000` - проброс порта
 - `-v $(pwd)/models:/app/models` - монтирование папки с моделями
 - `-e MODEL_DIR=/app/models/deeppavlov` - путь к модели в контейнере
@@ -111,7 +138,6 @@ curl -X POST "http://176.119.174.102:8000/api/predict" \
 python predict_server.py
 ```
 
-Сервер будет доступен по адресу: `http://localhost:8000`
 
 ## Требования к системе
 
