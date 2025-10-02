@@ -10,6 +10,7 @@ COPY requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY predict_server.py ./predict_server.py
+COPY models/deeppavlov ./models/deeppavlov
 
 ENV MODEL_DIR=/app/models/deeppavlov
 
